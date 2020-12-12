@@ -2,6 +2,7 @@
   <div>
     <div class="container">
       <!--UPLOAD-->
+      <transition name="fade" mode="out-in">
       <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
         <h2>Upload image</h2>
         <div class="dropbox">
@@ -21,7 +22,7 @@
         </div>
       </form>
       <!--SUCCESS-->
-      <div v-if="isSuccess">
+      <div v-if="isSuccess" class="uploadResult">
         <h2>File uploaded successfully.</h2>
         <p>
           <button class="btn" href="javascript:void(0)" @click="reset()">Change image</button>
@@ -36,13 +37,14 @@
         </p>
       </div>
       <!--FAILED-->
-      <div v-if="isFailed">
+      <div v-if="isFailed" class="uploadResult">
         <h2>Uploaded failed.</h2>
         <p>
           <a href="javascript:void(0)" @click="reset()">Try again</a>
         </p>
         <pre>{{ uploadError }}</pre>
       </div>
+      </transition>
     </div>
   </div>
 </template>

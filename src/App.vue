@@ -135,9 +135,16 @@ b {
   color: greenyellow;
   overflow-wrap: break-word;
 }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 footer {
   width: 100%;
   text-align: center;
   text-shadow: #fff;
+  margin-bottom: 40px;
 }
 </style>
