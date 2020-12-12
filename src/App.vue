@@ -1,39 +1,40 @@
 <template>
   <div id="app">
-
-    <Particles
-      id="tsparticles"
-      :options="particlesConfig"
-    />
+    <Particles id="tsparticles" :options="particlesConfig" />
 
     <div class="main-container">
       <h1>Blockchain Hack</h1>
-    <h2>FintechSquad's solution of 4th case</h2>
-    <div>
-      <p>
-        <b>Private key</b>
-      </p>
-      <code>{{ privateKey }}</code>
-    </div>
-    <div v-if="contractAddress">
-      <p>
-        <b>Contract Address</b>
-      </p>
-      <code>{{ contractAddress }}</code>
-    </div>
-    <FileUpload />
-    <div v-if="fileInfo">
-      <div v-for="(value, name) in fileInfo" :key="name">
-      <div v-if="value">
+      <h2>FintechSquad's solution of 4th case</h2>
+      <div>
         <p>
-        <b>{{name}}</b>
-      </p>
-      <code>{{ value }}</code>
+          <b>Private key</b>
+        </p>
+        <div class="code">
+          <code>{{ privateKey }}</code>
+        </div>
       </div>
+      <div v-if="contractAddress">
+        <p>
+          <b>Contract Address</b>
+        </p>
+        <div class="code">
+          <code>{{ contractAddress }}</code>
+        </div>
+      </div>
+      <FileUpload />
+      <div v-if="fileInfo">
+        <div v-for="(value, name) in fileInfo" :key="name">
+          <div v-if="value">
+            <p>
+              <b>{{ name }}</b>
+            </p>
+            <div class="code">
+              <code>{{ value }}</code>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-
   </div>
 </template>
 
@@ -70,7 +71,7 @@ export default {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: black;
   font-size: 16px;
 }
@@ -79,7 +80,7 @@ h1 {
   font-size: 100px;
   margin-bottom: 10px;
   margin-top: -86px;
-  letter-spacing: 0.02em
+  letter-spacing: 0.02em;
 }
 h2 {
   font-size: 45px;
@@ -88,7 +89,7 @@ h2 {
 b {
   font-size: 1.4rem;
 }
-.main-container{
+.main-container {
   background-color: rgb(255, 255, 255);
   max-width: 900px;
   margin: 150px auto 50px auto;
@@ -103,8 +104,8 @@ b {
 }
 
 #tsparticles canvas {
-background: rgb(209,155,169);
-background: linear-gradient(343deg, rgba(209,155,169,1) 0%, rgba(174,141,222,1) 100%);
+  background: rgb(209, 155, 169);
+  background: linear-gradient(343deg, rgba(209, 155, 169, 1) 0%, rgba(174, 141, 222, 1) 100%);
 }
 
 .container {
@@ -127,7 +128,7 @@ background: linear-gradient(343deg, rgba(209,155,169,1) 0%, rgba(174,141,222,1) 
   color: rgb(255, 255, 255);
 }
 
-code {
+.code {
   border-radius: 5px;
   padding: 5px 15px;
   background-color: #333;
@@ -137,6 +138,6 @@ code {
 footer {
   width: 100%;
   text-align: center;
-  text-shadow: #FFF;
+  text-shadow: #fff;
 }
 </style>
