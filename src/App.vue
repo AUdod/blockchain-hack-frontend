@@ -102,6 +102,11 @@ b {
   height: 100vh;
 }
 
+#tsparticles canvas {
+background: rgb(209,155,169);
+background: linear-gradient(343deg, rgba(209,155,169,1) 0%, rgba(174,141,222,1) 100%);
+}
+
 .container {
   margin-top: 15px;
   text-align: center;
