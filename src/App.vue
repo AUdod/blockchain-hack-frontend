@@ -56,13 +56,22 @@
       </div>
       <div v-if="hashOfFileInCorda">
         <p>
-          <b>Hash of file in Corda</b>
+          <b>Info of file in Corda</b>
         </p>
         <div class="code">
-          <code>{{ hashOfFileInCorda }}</code>
+        <div v-for="(value, name) in hashOfFileInCorda" :key="name" >
+          <div v-if="value" >
+              <code>--- {{name}} ---</code> <br>
+              <code>{{ value }}</code>
+          </div>
+        </div>
+
         </div>
         <div class="container btn-container">
-        <a class="btn" :href="cordaDownloadUrl + hashOfFileInCorda">Get file from Corda</a>
+        <a class="btn"
+          :href="cordaDownloadUrl + hashOfFileInCorda.hashOfFile">
+          Get file from Corda
+        </a>
         </div>
       </div>
     </div>
