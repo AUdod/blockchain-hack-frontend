@@ -68,6 +68,7 @@
 
         </div>
         <div class="container btn-container">
+          <p>UnZip and set file extention to check the file</p>
         <a class="btn"
           :href="cordaDownloadUrl + hashOfFileInCorda.hashOfFile">
           Get file from Corda
