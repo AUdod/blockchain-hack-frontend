@@ -54,6 +54,17 @@
           <code>{{ transactionHash }}</code>
         </div>
       </div>
+      <div class="fingerprint-spinner gray-spinner" v-if="transactionHash && !hashOfFileInCorda">
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+      </div>
       <div v-if="hashOfFileInCorda">
         <p>
           <b>Info of file in Corda</b>
@@ -232,5 +243,14 @@ footer {
   text-align: center;
   text-shadow: #fff;
   margin-bottom: 40px;
+}
+
+.gray-spinner {
+  display: block;
+  height: 164px;
+  width: 100%;
+}
+.gray-spinner .spinner-ring {
+  border-top-color: rgb(61, 61, 61)
 }
 </style>
