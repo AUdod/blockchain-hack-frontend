@@ -67,6 +67,11 @@
         </div>
 
         </div>
+        <p>Image comparsion</p>
+        <div class="img-container">
+          <img :src="localImgUrl" alt="EthImg">
+          <img :src="localImgUrl" alt="CordaImg">
+        </div>
         <div class="container btn-container">
           <p>UnZip and set file extension to check the file</p>
         <a class="btn"
@@ -110,6 +115,7 @@ export default {
       eventInfo: 'eventInfo',
       transactionHash: 'transactionHash',
       hashOfFileInCorda: 'hashOfFileInCorda',
+      localImgUrl: 'localImgUrl',
     }),
   },
 };
@@ -159,6 +165,16 @@ b {
 .container {
   margin-top: 15px;
   text-align: center;
+}
+
+.img-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.img-container img {
+  max-width: 100%;
 }
 
 .btn {

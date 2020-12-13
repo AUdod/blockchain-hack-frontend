@@ -25,6 +25,7 @@ export default new Vuex.Store({
     },
     transactionHash: '',
     hashOfFileInCorda: '',
+    localImgUrl: '',
   },
   mutations: {
     setEventInfoMutation(state, eventInfo) {
@@ -42,8 +43,14 @@ export default new Vuex.Store({
     setHashOfFileCordaMutation(state, hashOfFileInCorda) {
       state.hashOfFileInCorda = hashOfFileInCorda;
     },
+    setLocalImgUrlMutation(state, localImgUrl) {
+      state.localImgUrl = localImgUrl;
+    },
   },
   actions: {
+    setLocalImgUrlAction({ commit }, localImgUrl) {
+      commit('setLocalImgUrlMutation', localImgUrl);
+    },
     deployKYCContractAction({ commit, state }) {
       deployKYCContract(state.privateKey).then((x) => {
         commit('setContractAddressMutation', x);

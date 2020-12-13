@@ -4,7 +4,7 @@
       <!--UPLOAD-->
       <transition name="fade" mode="out-in">
       <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
-        <h2>Upload image</h2>
+        <h2>Upload image (under 1 mb)</h2>
         <div class="dropbox">
           <input
             type="file"
@@ -101,6 +101,7 @@ export default {
         .then(wait(0)) // DEV ONLY: wait for 1.5s
         .then((x) => {
           this.uploadedFiles = [].concat(x);
+          this.$store.dispatch('setLocalImgUrlAction', this.uploadedFiles[0].url);
           this.currentStatus = STATUS_SUCCESS;
         })
         .catch((err) => {
