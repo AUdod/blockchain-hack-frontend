@@ -61,7 +61,9 @@
         <div class="code">
           <code>{{ hashOfFileInCorda }}</code>
         </div>
-        <a :href="cordaDownloadUrl + hashOfFileInCorda">Get file from Corda</a>
+        <div class="container btn-container">
+        <a class="btn" :href="cordaDownloadUrl + hashOfFileInCorda">Get file from Corda</a>
+        </div>
       </div>
     </div>
   </div>
@@ -147,6 +149,8 @@ b {
 }
 
 .btn {
+  text-decoration: none;
+  color: #000;
   font-size: 17px;
   text-align: center;
   letter-spacing: 0.1em;
@@ -154,6 +158,11 @@ b {
   border: 1px solid #000;
   width: 238px;
   transition: all 0.5s ease;
+}
+
+.btn-container {
+  margin: 50px;
+  /* height: 50px; */
 }
 
 .btn:hover {
