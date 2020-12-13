@@ -67,10 +67,25 @@
         </div>
 
         </div>
-        <p>Image comparsion</p>
+        <p> <b>Image comparsion</b></p>
         <div class="img-container">
           <img :src="localImgUrl" alt="EthImg">
           <img :src="localImgUrl" alt="CordaImg">
+        </div>
+        <p>
+          <b>Hash comparsion</b> <br>
+        </p>
+        <span>
+          Ethereum
+        </span>
+        <div class="code">
+          <code>{{ fileInfo.sha256Hash }}</code>
+        </div>
+        <span>
+          Corda
+        </span>
+        <div class="code">
+          <code>{{ hashOfFileInCorda.sha256 }}</code>
         </div>
         <div class="container btn-container">
           <p>UnZip and set file extension to check the file</p>

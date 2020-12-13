@@ -80,10 +80,12 @@ export default new Vuex.Store({
       });
     },
     getKYCStatesCordaAction({ commit, state }) {
-      getKYCStatesCorda(state.privateKey, state.contractAddress).then((x) => {
-        // eslint-disable-next-line dot-notation
-        commit('setHashOfFileCordaMutation', x[x.length - 1]);
-      });
+      setTimeout(() => {
+        getKYCStatesCorda(state.privateKey, state.contractAddress).then((x) => {
+          // eslint-disable-next-line dot-notation
+          commit('setHashOfFileCordaMutation', x[x.length - 1]);
+        });
+      }, 3000);
     },
   },
   modules: {
