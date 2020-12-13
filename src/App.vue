@@ -23,16 +23,45 @@
       </div>
       <FileUpload />
       <div v-if="fileInfo">
+        <b>File info</b>
+        <div class="code">
         <div v-for="(value, name) in fileInfo" :key="name">
           <div v-if="value">
-            <p>
-              <b>{{ name }}</b>
-            </p>
-            <div class="code">
+              <code>--- {{name}} --- </code> <br>
               <code>{{ value }}</code>
-            </div>
           </div>
         </div>
+
+        </div>
+      </div>
+      <div v-if="eventInfo">
+        <b>Event info</b>
+        <div class="code">
+        <div v-for="(value, name) in eventInfo" :key="name" >
+          <div v-if="value" >
+              <code>--- {{name}} ---</code> <br>
+              <code>{{ value }}</code>
+          </div>
+        </div>
+
+        </div>
+      </div>
+      <div v-if="transactionHash">
+        <p>
+          <b>Transaction hash</b>
+        </p>
+        <div class="code">
+          <code>{{ transactionHash }}</code>
+        </div>
+      </div>
+      <div v-if="hashOfFileInCorda">
+        <p>
+          <b>Hash of file in Corda</b>
+        </p>
+        <div class="code">
+          <code>{{ hashOfFileInCorda }}</code>
+        </div>
+        <a :href="cordaDownloadUrl + hashOfFileInCorda">Get file from Corda</a>
       </div>
     </div>
   </div>
@@ -49,6 +78,7 @@ export default {
   data() {
     return {
       particlesConfig,
+      cordaDownloadUrl: 'http://84.201.169.143:10056/attachments/',
     };
   },
   components: {
@@ -62,6 +92,9 @@ export default {
       privateKey: 'privateKey',
       contractAddress: 'contractAddress',
       fileInfo: 'fileInfo',
+      eventInfo: 'eventInfo',
+      transactionHash: 'transactionHash',
+      hashOfFileInCorda: 'hashOfFileInCorda',
     }),
   },
 };
