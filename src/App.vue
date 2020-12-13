@@ -89,6 +89,9 @@ export default {
   created() {
     this.$store.dispatch('deployKYCContractAction');
   },
+  mounted() {
+    this.$nextTick(() => document.body.classList.add('app-mounted'));
+  },
   computed: {
     ...mapState({
       privateKey: 'privateKey',
