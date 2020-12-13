@@ -83,7 +83,7 @@ export default new Vuex.Store({
       setTimeout(() => {
         getKYCStatesCorda(state.privateKey, state.contractAddress).then((x) => {
           // eslint-disable-next-line dot-notation
-          commit('setHashOfFileCordaMutation', x[x.length - 1]);
+          commit('setHashOfFileCordaMutation', x.reverse().find((e) => e.sha256 === state.fileInfo.sha256Hash));
         });
       }, 3000);
     },
