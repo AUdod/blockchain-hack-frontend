@@ -4,7 +4,7 @@
 
     <div class="main-container">
       <h1>Blockchain Hack</h1>
-      <h2>FintechSquad's solution of 4th case</h2>
+      <h2>FintechSquad's solution of the 4th case</h2>
       <div>
         <p>
           <b>Private key</b>
@@ -68,7 +68,7 @@
 
         </div>
         <div class="container btn-container">
-          <p>UnZip and set file extention to check the file</p>
+          <p>UnZip and set file extension to check the file</p>
         <a class="btn"
           :href="cordaDownloadUrl + hashOfFileInCorda.hashOfFile">
           Get file from Corda
